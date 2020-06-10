@@ -21,15 +21,3 @@ class MSDBConnection:
     def sql_query(self, sql_string):
         # Filter and Validate First Here
         return self.__sql_query_execute(sql_string)
-
-
-
-# nwind = MSDBConnection()
-# results = nwind.sql_query("SELECT * FROM PRODUCTS")
-#
-# while True:
-#     row = results.fetchone()
-#     if row is None:
-#         break
-#     print(row.ProductName)
-
