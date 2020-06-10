@@ -32,14 +32,17 @@ VALUES
 (
 '{product_name}', {supplier_id}, {category_id}, '{quantity_per_unit}', {unit_price}, {units_in_stock}, {units_on_order}, {reorder_level}, {discontinued}
 );
-""").commit()
+""")
+        self.conn.commit()
 
 # update one method (similar to get by id)
     def update_one_row(self, product_name, quantity_per_unit, product_id):
         self.sql_query(f"""UPDATE Products
 SET ProductName = '{product_name}', QuantityPerUnit = '{quantity_per_unit}'
-WHERE ProductID = {int(product_id)}""").commit()
+WHERE ProductID = {int(product_id)}""")
+        self.conn.commit()
 
 # delete one method ( CAREFULLY ) by id
     def delete_one_row(self, product_id):
-        self.sql_query(f"""DELETE FROM Products WHERE ProductID = {product_id}""").commit()
+        self.sql_query(f"""DELETE FROM Products WHERE ProductID = {product_id}""")
+        self.conn.commit()

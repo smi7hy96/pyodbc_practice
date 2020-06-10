@@ -32,14 +32,17 @@ VALUES
 (
 '{company_name}', '{contact_name}', '{contact_title}', '{address}', '{city}', '{region}', '{postal_code}', '{country}', '{phone}', '{fax}
 );
-""").commit()
+""")
+        self.conn.commit()
 
 # update one method (similar to get by id)
     def update_one_row(self, customer_name, city, phone, customer_id):
         self.sql_query(f"""UPDATE Customers
 SET ContactName = '{customer_name}', City = '{city}', Phone = '{phone}'
-WHERE CustomerID = {customer_id}""").commit()
+WHERE CustomerID = {customer_id}""")
+        self.conn.commit()
 
 # delete one method ( CAREFULLY ) by id
     def delete_one_row(self, customer_id):
-        self.sql_query(f"""DELETE FROM Customers WHERE CustomerID = {customer_id}""").commit()
+        self.sql_query(f"""DELETE FROM Customers WHERE CustomerID = {customer_id}""")
+        self.conn.commit()
