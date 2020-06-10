@@ -11,6 +11,6 @@ def return_query_results(conn, query):
             print(row)
 
 
-connection = db_connect_me()
-query = "SELECT * FROM Orders o WHERE o.ShipCity IN ('Rio De Janeiro', 'Reims')"
-return_query_results(connection, query)
+# connection = db_connect_me()
+# query = "SELECT * FROM Orders o WHERE o.ShipCity IN ('Rio De Janeiro', 'Reims')"
+# return_query_results(connection, query)
