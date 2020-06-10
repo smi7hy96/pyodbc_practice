@@ -7,7 +7,7 @@ class DBCustomers(MSDBConnection):
         super().__init__()
 
     def get_by_id(self, id):
-        return self.sql_query(f'SELECT * FROM Customers WHERE CustomerID = {int(id)}').fetchone()
+        return self.sql_query(f"SELECT * FROM Customers WHERE CustomerID = '{id}'").fetchone()
 
     def get_all(self, customer_name=None):
         result_list = []
